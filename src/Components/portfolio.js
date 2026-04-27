@@ -21,12 +21,12 @@ function ParticleCanvas() {
       this.alpha = Math.random() * 0.5 + 0.1;
       this.color = Math.random() > 0.5 ? "167,139,250" : "34,211,238";
     }
-    Particle.prototype.update = function() {
+    Particle.prototype.update = function () {
       this.x += this.vx; this.y += this.vy;
       if (this.x < 0 || this.x > W) this.vx *= -1;
       if (this.y < 0 || this.y > H) this.vy *= -1;
     };
-    Particle.prototype.draw = function() {
+    Particle.prototype.draw = function () {
       ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${this.color},${this.alpha})`; ctx.fill();
     };
@@ -112,13 +112,15 @@ function useReveal() {
 const skills = [
   { icon: "⚡", title: "Languages", tags: ["JavaScript ES6+", "TypeScript", "HTML5", "CSS3"], hi: [0, 1] },
   { icon: "⚛", title: "Frameworks", tags: ["React.js", "Redux Toolkit", "Zustand", "React Hooks", "Redux"], hi: [0, 1] },
-  { icon: "🎨", title: "UI Libraries", tags: ["Material-UI", "Ant Design", "Tailwind CSS", "Styled Components","CoreUI", "Bootstrap"], hi: [] },
+  { icon: "🎨", title: "UI Libraries", tags: ["Material-UI", "Ant Design", "Tailwind CSS", "Styled Components", "CoreUI", "Bootstrap"], hi: [] },
   { icon: "🔌", title: "API & Real-Time", tags: ["RESTful APIs", "WebSocket", "Axios"], hi: [0, 1] },
-   { icon: "🤖", title: "AI Tools", tags: [
-    "ChatGPT",
-    "Claude",
-    "Gemini",
-  ], hi: [0, 1] },
+  {
+    icon: "🤖", title: "AI Tools", tags: [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+    ], hi: [0, 1]
+  },
   { icon: "🛠", title: "Tools", tags: ["Git / GitHub", "VS Code", "Postman", "SCM"], hi: [] },
 ];
 
@@ -126,13 +128,13 @@ const projects = [
   { num: "01 — HOTEL BOOKING", title: "Multi-Role Booking System", desc: "Production-grade platform with role-based dashboards for Hotel Owners, Agencies & Corporate Clients. Three international payment gateways integrated.", tags: ["React.js", "Redux Toolkit", "Styled Components"], hi: [0] },
   { num: "02 — B2B PLATFORM", title: "Sales & Distribution Dashboard", desc: "Enterprise frontend serving 200+ distributors. Real-time inventory tracking, dynamic order management, and 8+ API integrations.", tags: ["React.js", "Material-UI", "Redux Toolkit"], hi: [0] },
   { num: "03 — REAL-TIME CHAT", title: "Internal Chat Tool", desc: "WebSocket-powered real-time communication. 40% re-render reduction via optimised Zustand store architecture and targeted subscriptions.", tags: ["React.js", "Zustand", "WebSocket"], hi: [0, 2] },
- {
-  num: "04 — PORTFOLIO",
-  title: "Personal Portfolio Website",
-  desc: "Developer portfolio built based on my professional experience and projects, showcasing skills, work history, and real-world applications. Features interactive UI, animated particle background, and smooth scroll-based transitions for an engaging user experience.",
-  tags: ["React.js", "CSS3", "Canvas API", "Responsive Design"],
-  hi: [0, 2]
-}
+  {
+    num: "04 — PORTFOLIO",
+    title: "Personal Portfolio Website",
+    desc: "Developer portfolio built based on my professional experience and projects, showcasing skills, work history, and real-world applications. Features interactive UI, animated particle background, and smooth scroll-based transitions for an engaging user experience.",
+    tags: ["React.js", "CSS3", "Canvas API", "Responsive Design"],
+    hi: [0, 2]
+  }
 ];
 
 const contacts = [
@@ -261,35 +263,35 @@ export default function Portfolio() {
             </div>
           </div>
           <div className="pf-exp reveal">
-  <div>
-    <div className="pf-exp-co">Personal Project</div>
-  </div>
+            <div>
+              <div className="pf-exp-co">Personal Project</div>
+            </div>
 
-  <div className="pf-exp-body">
-    <h3>Frontend Developer — Portfolio Website</h3>
-    <ul className="pf-exp-ul">
-      <li>Developed a personal portfolio application showcasing professional experience, projects, and technical skills with a modern UI.
-      </li>
-      <li>
-        Implemented interactive particle background using Canvas API and optimized rendering for smooth performance.
-      </li>
-      <li>
-        Built reusable components and scroll-based animations using custom React hooks and Intersection Observer.
-      </li>
-      <li>
-        Designed fully responsive layouts ensuring seamless experience across desktop and mobile devices.
-      </li>
-    </ul>
+            <div className="pf-exp-body">
+              <h3>Frontend Developer — Portfolio Website</h3>
+              <ul className="pf-exp-ul">
+                <li>Developed a personal portfolio application showcasing professional experience, projects, and technical skills with a modern UI.
+                </li>
+                <li>
+                  Implemented interactive particle background using Canvas API and optimized rendering for smooth performance.
+                </li>
+                <li>
+                  Built reusable components and scroll-based animations using custom React hooks and Intersection Observer.
+                </li>
+                <li>
+                  Designed fully responsive layouts ensuring seamless experience across desktop and mobile devices.
+                </li>
+              </ul>
 
-    <div className="pf-exp-tags">
-      {["React.js", "CSS3", "Canvas API", "Responsive Design"].map((t, i) => (
-        <span key={t} className={`pf-tag${i === 0 || i === 2 ? " hi" : ""}`}>
-          {t}
-        </span>
-      ))}
-    </div>
-  </div>
-</div>
+              <div className="pf-exp-tags">
+                {["React.js", "CSS3", "Canvas API", "Responsive Design"].map((t, i) => (
+                  <span key={t} className={`pf-tag${i === 0 || i === 2 ? " hi" : ""}`}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
